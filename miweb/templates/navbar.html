@@ -1,0 +1,32 @@
+{% load static %}
+<header class="text-bg-warning p-3">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li>
+          <a href="{% url 'index' %}" class="nav-link px-2"><img src="{% static 'OnlyFlans.png' %}" alt="Logo" width="96px" height="32px" /></a>
+        </li>
+        <li>
+          <a href="{% url 'index' %}" class="nav-link px-2 text-white">Inicio</a>
+        </li>
+        <li>
+          <a href="{% url 'about' %}" class="nav-link px-2 text-white">Acerca</a>
+        </li>
+        <li>
+          <a href="{% url 'welcome' %}" class="nav-link px-2 text-white">Bienvenido</a>
+        </li>
+        <li>
+          <a href="{% url 'contact' %}" class="nav-link px-2 text-white">Contacto</a>
+        </li>
+      </ul>
+
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-light me-2">Login</button>
+        <button type="button" class="btn btn-warning">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+

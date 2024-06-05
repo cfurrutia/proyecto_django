@@ -1,0 +1,10 @@
+asgiref==3.8.1
+distlib==0.3.8
+Django==3.2
+filelock==3.14.0
+platformdirs==4.2.2
+pytz==2024.1
+setuptools==70.0.0
+sqlparse==0.5.0
+virtualenv==20.26.2
+virtualenvwrapper-win==1.2.7
