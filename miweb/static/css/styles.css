@@ -1,0 +1,10 @@
+.max-height {
+    max-height: 200px;
+    /* Ajusta este valor según tus necesidades */
+    object-fit: cover;
+    /* Esto mantiene la proporción de la imagen y recorta lo que sobresalga */
+}
+
+.form {
+    margin-bottom: 15px;
+}
