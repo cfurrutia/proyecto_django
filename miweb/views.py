@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import ContactFormForm
 from .models import ContactForm, Flan
+from .forms import ContactFormModelForm
 
 
 def index(request):
@@ -18,12 +18,12 @@ def welcome(request):
 
 def contact(request):
     if request.method == 'POST':
-        form = ContactFormForm(request.POST)
+        form = ContactFormModelForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('success')
     else:
-        form = ContactFormForm()
+        form = ContactFormModelForm()
     return render(request, 'contact.html', {'form': form})
 
 def success(request):
