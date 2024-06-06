@@ -1,10 +1,12 @@
-.max-height {
-    max-height: 200px;
-    /* Ajusta este valor según tus necesidades */
+.card-img-top {
+    height: 240px;
+    
     object-fit: cover;
-    /* Esto mantiene la proporción de la imagen y recorta lo que sobresalga */
+
 }
 
-.form {
-    margin-bottom: 15px;
+.form-label {
+    text-align: left;
+    display: block;
+    margin-bottom: 0.5rem;
 }
