@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import ContactForm, Flan
+from .models import Flan
 from .forms import ContactFormModelForm
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 def index(request):
     public_flans = Flan.objects.filter(is_private=False)
@@ -11,10 +12,11 @@ def index(request):
 def about(request):
     return render(request, 'about.html', {})
 
+@login_required
 def welcome(request):
     private_flans = Flan.objects.filter(is_private=True)
-    return render(request, 'welcome.html', {'private_flans': private_flans})
-
+    context = {'private_flans': private_flans}
+    return render(request, 'welcome.html', context)
 
 def contact(request):
     if request.method == 'POST':
@@ -29,5 +31,5 @@ def contact(request):
 def success(request):
     return render(request, 'success.html')
 
-
-
+def login(request):
+    return render(request, 'login.html')
