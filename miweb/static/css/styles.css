@@ -10,3 +10,7 @@
     display: block;
     margin-bottom: 0.5rem;
 }
+
+.custom-font {
+    font-family: 'Arial', sans-serif; 
+}
