@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Flan
 from .forms import ContactFormModelForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+
 
 def index(request):
     public_flans = Flan.objects.filter(is_private=False)
