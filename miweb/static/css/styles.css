@@ -1,16 +1,8 @@
-.card-img-top {
-    height: 240px;
-    
-    object-fit: cover;
 
+* {
+
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
 }
 
-.form-label {
-    text-align: left;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.custom-font {
-    font-family: 'Arial', sans-serif; 
-}

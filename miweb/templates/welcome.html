@@ -2,11 +2,8 @@
 
 {% block 'content' %}
   <div class="container mt-4">
-    {% if user.is_authenticated %}
+    
       <h3 class="text-center">Bienvenido, {{ user.username }}!</h3>
-    {% else %}
-      <h3 class="text-center">Bienvenidos a OnlyFlans!</h3>
-    {% endif %}
   </div>
   <br />
   <div class="container">

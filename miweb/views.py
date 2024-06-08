@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Flan
 from .forms import ContactFormModelForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
 
 def index(request):
@@ -31,5 +33,18 @@ def contact(request):
 def success(request):
     return render(request, 'success.html')
 
-def login(request):
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Credenciales incorrectas. Por favor, intenta de nuevo.')
+            return redirect('login')  # Redirige de vuelta a la página de inicio de sesión
+
     return render(request, 'login.html')
