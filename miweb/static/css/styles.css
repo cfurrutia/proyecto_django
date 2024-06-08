@@ -1,4 +1,3 @@
-
 * {
 
     margin: 0px;
@@ -6,3 +5,8 @@
     border: 0px;
 }
 
+body {
+    font-family: "Raleway", sans-serif;
+    opacity: 0.75;
+    background: url("/static/flanes/fondo.jpg") 50% 0 no-repeat fixed;
+}

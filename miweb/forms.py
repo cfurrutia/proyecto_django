@@ -13,5 +13,5 @@ class ContactFormModelForm(forms.ModelForm):
         widgets = {
             'customer_name': forms.TextInput(attrs={'placeholder': 'Tu nombre', 'class': 'form-control'}),
             'customer_email': forms.EmailInput(attrs={'placeholder': 'Correo electrónico', 'class': 'form-control'}),
-            'message': forms.Textarea(attrs={'placeholder': 'Tu mensaje', 'rows': 3, 'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'placeholder': 'Tu mensaje', 'rows': 4, 'class': 'form-control'}),
         }
