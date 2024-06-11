@@ -33,7 +33,7 @@ def contact(request):
 def success(request):
     return render(request, 'success.html')
 
-def login_view(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
