@@ -10,6 +10,8 @@
         <li><a href="{% url 'contact' %}" class="nav-link px-3 text-white">Contacto</a></li>
         {% if user.is_authenticated %}
           <li><a href="{% url 'welcome' %}" class="nav-link px-4 text-white">Bienvenido</a></li>
+          <li>
+            <a href="http://127.0.0.1:8000/admin/" class="nav-link px-4 text-white custom-font">Admin</a></li> 
           <li><a href="{% url 'logout' %}" class="nav-link px-4 text-white custom-font">Cerrar sesión</a></li>
         {% else %}
           <li><a href="{% url 'login' %}" class="nav-link px-4 text-white custom-font">Iniciar sesión</a></li>

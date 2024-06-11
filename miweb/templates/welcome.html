@@ -10,12 +10,12 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       {% for flan in private_flans %}
         <div class="col">
-          <div class="card shadow p-3 mb-5 bg-body-tertiary rounded h-100">
+          <div class="card shadow p-3 mb-5 rounded h-100" style="background-color: #333;">
             <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}" style="height: 240px; object-fit: cover;" />
-            <div class="card-body shadow p-3 mb-5 bg-body-tertiary rounded">
-              <h5 class="card-title">{{ flan.name }}</h5>
-              <p class="card-text bg-body-secondary fst-italic">{{ flan.description }}</p>
-              <p class="card-text">Precio: ${{ flan.price }}</p>
+            <div class="card-body shadow p-3 mb-5 rounded" style="background-color: #444;">
+              <h5 class="card-title" style="color: white;">{{ flan.name }}</h5>
+              <p class="card-text bg-body-secondary" style="color: black;">{{ flan.description }}</p>
+              <p class="card-text" style="color: yellow;">Precio: ${{ flan.price }}</p>
             </div>
           </div>
         </div>
