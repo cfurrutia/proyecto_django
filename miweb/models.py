@@ -7,6 +7,7 @@ class Flan(models.Model):
     description = models.TextField()
     image_url = models.URLField()
     slug = models.SlugField()
+    price = models.IntegerField()
     is_private = models.BooleanField(default=False)
     
     def __str__(self):
@@ -22,5 +23,3 @@ class ContactForm(models.Model):
         return self.customer_name
     
 
-
-    
