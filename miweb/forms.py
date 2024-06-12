@@ -15,3 +15,8 @@ class ContactFormModelForm(forms.ModelForm):
             'customer_email': forms.EmailInput(attrs={'placeholder': 'Correo electrónico', 'class': 'form-control'}),
             'message': forms.Textarea(attrs={'placeholder': 'Tu mensaje', 'rows': 4, 'class': 'form-control'}),
         }
+        
+class LoginForm(forms.Form):
+    username = forms.CharField(label=('Usuario'))
+    password = forms.CharField(label=('Contraseña'), widget=forms.PasswordInput)
+

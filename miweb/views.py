@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect
 from .models import Flan
-from .forms import ContactFormModelForm
+from .forms import ContactFormModelForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-
+from django.shortcuts import render, redirect
 
 def index(request):
     public_flans = Flan.objects.filter(is_private=False)
@@ -13,6 +12,23 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html', {})
+
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('welcome')
+            else:
+                messages.error(request)
+    else:
+        form = LoginForm()
+
+    return render(request, 'login.html', {'form': form})
 
 @login_required
 def welcome(request):
@@ -32,17 +48,3 @@ def contact(request):
 
 def success(request):
     return render(request, 'success.html')
-
-def login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            return redirect('welcome')
-        else:
-            messages.error(request, 'Credenciales incorrectas. Por favor, intenta de nuevo.')
-            return redirect('login')  
-    return render(request, 'login.html')

@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
-
 {% block 'content' %}
-  <h2 class="text-center text-white">Inicio</h2>
+  <div class="container mt-4">
+    
+    <h2 class="text-center text-white">Inicio</h2>
+    <br />
+  </div>
   <br />
   <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="row row-cols-1 row-cols-sm- 2 row-cols-md-3 row-cols-lg-4 g-4">
       {% for flan in public_flans %}
         <div class="col">
-          <div class="card shadow p-3 mb-5 rounded h-100" style="background-color: #333;">
+          <div class="cardp-3 mb-5 rounded h-100" style="background-color: #333;">
             <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}" style="height: 240px; object-fit: cover;" />
-            <div class="card-body shadow p-3 mb-5 rounded" style="background-color: #444;">
+            <div class="card-body p-3 mb-5 rounded" style="background-color: #444;">
               <h5 class="card-title" style="color: white;">{{ flan.name }}</h5>
               <p class="card-text bg-body-secondary" style="color: black;">{{ flan.description }}</p>
               <p class="card-text" style="color: yellow;">Precio: ${{ flan.price }}</p>
