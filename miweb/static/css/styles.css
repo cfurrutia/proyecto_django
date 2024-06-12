@@ -10,3 +10,14 @@ body {
     opacity: 0.75;
     background: url("/static/flanes/fondo.jpg") 50% 0 no-repeat fixed;
 }
+
+.form-control {
+    border: 2px solid orange;
+    border-radius: 5px; 
+    padding: 10px; 
+}
+
+.form-control:focus {
+    border-color: darkorange;
+    outline: none; 
+}

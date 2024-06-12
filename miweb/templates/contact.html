@@ -4,7 +4,7 @@
 <div class="d-flex justify-content-center align-items-center">
   <div class="card p-5 login-card border border-warning" style="position: relative; width: 85%;">
     <h2 class="text-center mb-4">Contacto</h2>
-    <form method="post">
+    <form method="post" action="{% url 'contact' %}">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit" class="btn btn-warning">Enviar</button>
