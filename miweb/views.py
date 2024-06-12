@@ -37,14 +37,12 @@ def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-
         user = authenticate(username=username, password=password)
 
         if user is not None:
             login(request, user)
-            return redirect('dashboard')
+            return redirect('welcome')
         else:
             messages.error(request, 'Credenciales incorrectas. Por favor, intenta de nuevo.')
-            return redirect('login')  # Redirige de vuelta a la página de inicio de sesión
-
+            return redirect('login')  
     return render(request, 'login.html')
