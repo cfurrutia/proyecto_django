@@ -1,5 +1,4 @@
 * {
-
     margin: 0px;
     padding: 0px;
     border: 0px;
@@ -7,17 +6,18 @@
 
 body {
     font-family: "Raleway", sans-serif;
-    opacity: 0.75;
+    opacity: 0.70;
     background: url("/static/flanes/fondo.jpg") 50% 0 no-repeat fixed;
+}
+
+.nav-link:hover {
+    color: #363fbec0 !important;
+    
 }
 
 .form-control {
     border: 2px solid orange;
     border-radius: 5px; 
-    padding: 10px; 
+    padding: 5px; 
 }
 
-.form-control:focus {
-    border-color: darkorange;
-    outline: none; 
-}
