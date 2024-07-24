@@ -1,23 +1,96 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+:root {
+    --primary-color: #FFA500;
+    --secondary-color: #cab01d;
+    --text-color: #333;
+    --background-color: rgba(218, 187, 122, 0.8);
 }
 
 body {
     font-family: "Raleway", sans-serif;
-    opacity: 0.70;
-    background: url("/static/flanes/fondo.jpg") 50% 0 no-repeat fixed;
+    background: url("/static/flanes/fondo.jpg") repeat fixed;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    background-color: var(--background-color);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-weight: 600px;
+    color: #6c757d;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #363fbec0 !important;
-    
+    color: #ff6347;
+}
+
+.navbar-brand img {
+    filter: brightness(1.2); 
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+h2.card-title {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .form-control {
-    border: 2px solid orange;
-    border-radius: 5px; 
-    padding: 5px; 
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
 }
 
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.form-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.btn-link {
+    color: #007bff;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}

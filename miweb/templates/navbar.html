@@ -1,31 +1,39 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-</head>
-<body>
-    <div class="container text-bg-warning p-3">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="{% url 'index' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <img src="{% static 'OnlyFlans.png' %}" alt="Logo" width="114px" height="32px" />
-            </a>
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{% url 'index' %}" class="nav-link px-1 text-white">Inicio</a></li>
-                <li><a href="{% url 'about' %}" class="nav-link px-3 text-white">Acerca</a></li>
-                <li><a href="{% url 'contact' %}" class="nav-link px-3 text-white">Contacto</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'OnlyFlans.png' %}" alt="OnlyFlans" height="55" class="d-inline-block align-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">Acerca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
+                </li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'welcome' %}" class="nav-link px-4 text-white">Bienvenido</a></li>
-                    <li><a href="http://127.0.0.1:8000/admin/" class="nav-link px-4 text-white custom-font">Panel de control</a></li>
-                    <li><a href="{% url 'logout' %}" class="nav-link px-4 text-white custom-font">Cerrar sesión</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'welcome' %}">Bienvenido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Panel de control</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="{% url 'logout' %}">Cerrar sesión</a>
+                    </li>
                 {% else %}
-                    <li><a href="{% url 'login' %}" class="nav-link px-4 text-white custom-font">Iniciar sesión</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                    </li>
                 {% endif %}
             </ul>
         </div>
     </div>
-</body>
-</html>
+</nav>

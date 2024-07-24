@@ -11,9 +11,22 @@ class ContactFormModelForm(forms.ModelForm):
             'message': 'Mensaje',
         }
         widgets = {
-            'customer_name': forms.TextInput(attrs={'placeholder': 'Tu nombre', 'class': 'form-control'}),
-            'customer_email': forms.EmailInput(attrs={'placeholder': 'Correo electrónico', 'class': 'form-control'}),
-            'message': forms.Textarea(attrs={'placeholder': 'Tu mensaje', 'rows': 4, 'class': 'form-control'}),
+            'customer_name': forms.TextInput(attrs={
+                'placeholder': 'Tu nombre',
+                'class': 'form-control rounded-pill border-primary shadow-sm',
+                'style': 'max-width: 500px;'
+            }),
+            'customer_email': forms.EmailInput(attrs={
+                'placeholder': 'Correo electrónico',
+                'class': 'form-control rounded-pill border-primary shadow-sm',
+                'style': 'max-width: 500px;'
+            }),
+            'message': forms.Textarea(attrs={
+                'placeholder': 'Tu mensaje',
+                'rows': 4,
+                'class': 'form-control border-primary shadow-sm',
+                'style': 'max-width: 500px;'
+            }),
         }
         
 class LoginForm(forms.Form):

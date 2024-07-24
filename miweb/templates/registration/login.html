@@ -1,26 +1,43 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<div class="d-flex justify-content-center align-items-center">
-  <div class="card p-5 login-card border border-warning" style="position: relative; width: 85%;">
-    <h2 class="text-center mb-4">Iniciar sesión</h2>
-
-    <!-- mensajes de error -->
-    {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-    <form method="post" action="{% url 'login' %}">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button data-mdb-ripple-init type="submit" class="btn btn-warning btn-block mb-4">Login</button>
-    </form>
-    <hr />
-    <p class="text-center"><a class="link-secondary" href="{% url 'index' %}">Volver al inicio</a></p>
-  </div>
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card shadow-lg rounded">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Iniciar sesión</h2>
+                    
+                    {% if messages %}
+                        <div class="alert alert-info" role="alert">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="mb-3">
+                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger">{{ field.errors }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Iniciar sesión</button>
+                        </div>
+                    </form>
+                    
+                    <div class="text-center mt-3">
+                        <a href="{% url 'index' %}" class="btn btn-link">Volver al inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

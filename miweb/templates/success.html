@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block 'content' %}
-  <div class="container d-flex justify-content-center align-items-center">
-    <h1 class="text-white">Gracias por contactarte con OnlyFlans, te responderemos en breve</h1>
-  </div>
+<div class="container text-center">
+    <h2 class="mb-4">¡Gracias por contactarte con OnlyFlans!</h2>
+    <p class="lead">Te responderemos en breve.</p>
+    <a href="{% url 'index' %}" class="btn btn-primary mt-3">Volver al inicio</a>
+</div>
 {% endblock %}
